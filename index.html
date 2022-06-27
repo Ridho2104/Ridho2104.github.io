@@ -16,7 +16,7 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="style.css" />
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-danger shadow p-3">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger shadow p-3 fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">Mohd. Ridho</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -147,27 +147,36 @@
     <!-- kontak -->
     <section id="contact">
       <div class="container">
-        <div class="row">
-          <div class="col text-center mb-3">
+        <div class="row text-center mb-3">
+          <div class="col">
             <h2>Contact Me</h2>
           </div>
         </div>
         <div class="row justify-content-center">
-          <div class="col-md-8">
-            <form>
+          <div class="col-md-6">
+            <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+              <strong>Terimakasih!</strong> Pesan anda sudah kami terima.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <form name="wpu-contact-form">
               <div class="mb-3">
                 <label for="name" class="form-label">Nama Lengkap</label>
-                <input type="text" class="form-control" id="name" aria-describedby="name" />
+                <input type="text" class="form-control" id="name" aria-describedby="name" name="nama" />
               </div>
               <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="email" />
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" aria-describedby="email" name="email" />
               </div>
               <div class="mb-3">
                 <label for="pesan" class="form-label">Pesan</label>
-                <textarea class="form-control" id="pesan" rows="3"></textarea>
+                <textarea class="form-control" id="pesan" rows="3" name="pesan"></textarea>
               </div>
-              <button type="submit" class="btn btn-danger">Kirim</button>
+              <button type="submit" class="btn btn-primary btn-kirim">Kirim</button>
+
+              <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Loading...
+              </button>
             </form>
           </div>
         </div>
